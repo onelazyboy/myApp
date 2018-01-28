@@ -1,14 +1,23 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+<ion-header [class.headanimate]="tabanimate" [class.idark]="isIdark">
+
+  <ion-navbar color="mblue" [class.idark_content]="isIdark">
+      <ion-searchbar (click)="openSearch();" placeholder="搜索"></ion-searchbar>
+      <ion-buttons end (click)="openMmessage();">
+          <button ion-button icon-only>
+            <ion-icon name="text"></ion-icon>
+          </button>
+      </ion-buttons>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content (ionScroll)="onScroll($event)" scrollY="false" [class.idark]="isIdark">
+
+  <div class="ihome_wrap" [class.idark_content]="isIdark">
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+  </div>
+
 </ion-content>

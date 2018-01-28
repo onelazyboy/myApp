@@ -1,3 +1,45 @@
 page-home {
-
+    position: relative;
+    min-height: 100% !important;
+    .idark_content {
+        .toolbar-background,
+        .fab {
+            background: #212b30 !important;
+        }
+        .searchbar-input {
+            background: #37474f !important;
+        }
+        ion-icon {
+            color: #848e93 !important;
+        }
+    }
+    ion-content {
+        background: #eee !important;
+        .fixed-content,
+        .scroll-content {
+            padding-top: 55px !important;
+            margin-top: 0 !important;
+            border-top: none !important;
+        }
+        ion-fab {
+            position: fixed !important;
+            bottom: 100px !important;
+        }
+    }
+    ion-refresher {
+        z-index: 99 !important;
+        top: 0 !important;
+    }
+    ion-header {
+        transition: top 1000ms cubic-bezier(.19, 1.12, .65, .91) !important;
+    }
+    ion-searchbar {
+        width: 99% !important;
+    }
+    .headanimate {
+        top: -90px;
+    }
+    ion-fab[bottom][edge] {
+        bottom: 22px;
+    }
 }
