@@ -1,8 +1,9 @@
-import { Component,ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { Headers, Http } from '@angular/http';
 import { AppGlobal, AppService } from '../../app/app.service';
+import { WORKS } from '../../app/mock-works';
 
 
 /**
@@ -24,10 +25,19 @@ export class HomePage {
   _refresher = null;
 
   isIdark;
-   //数据
+   //数据 
    items = [];
    old_items = [];
   constructor(public http: Http,public UserService: UserServiceProvider,public navCtrl: NavController, public navParams: NavParams,public ref: ChangeDetectorRef, public appService: AppService) {
+    this.getdata();
+  }
+
+  //获取数据
+  getdata() {
+    this.UserService.presentLoadingDefault();
+
+    this.items = WORKS;
+    this.UserService.presentLoadingDismiss();
   }
 
   ionViewDidLoad() {
@@ -35,7 +45,6 @@ export class HomePage {
   }
 
   onScroll($event: any) {
-
     var scrollTop = $event.scrollTop;
 
     if (scrollTop > 50 && (this.old_scrollTop - scrollTop) < 0) {
@@ -56,34 +65,6 @@ export class HomePage {
 
     this._refresher = refresher;
   }
-
-  //获取数据
-  getdata() {
-    this.UserService.presentLoadingDefault();
-
-    let url = "https://www.devonhello.com/chihu2/home";
-
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-    this.http.post(url, "len=" + this.items.length, {
-      headers: headers
-    }).subscribe((res) => {
-        if (this._refresher) {
-          this._refresher.complete();
-        }
-        
-        this.items = this.items.concat(res.json());
-        if(this.old_items.length > 0){
-          this.items.splice(0,this.old_items.length);
-          this.old_items = [];
-        }
-        this.UserService.presentLoadingDismiss();
-      });
-  }
-
- 
-
   openSearch() {
     this.navCtrl.push('SearchPage');
   }

@@ -11,6 +11,8 @@ import { MyApp } from './app.component';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { RongCloudProvider } from '../providers/rong-cloud/rong-cloud';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 @NgModule({
   declarations: [
     MyApp

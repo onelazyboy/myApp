@@ -25,9 +25,8 @@ export class WorkComponent {
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider) {
     this.isIdark = this.UserService.isIdark;
     this.irootNavCtrl = this.navCtrl;
-    this.UserService.SetIdark.subscribe((data) => {
-      this.isIdark = data;
-    })
+    
+    
     console.log('Hello WorkComponent Component');
     this.text = 'Hello World';
   }
