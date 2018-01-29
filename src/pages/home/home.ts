@@ -37,6 +37,9 @@ export class HomePage {
     this.UserService.presentLoadingDefault();
 
     this.items = WORKS;
+    if (this._refresher) {
+      this._refresher.complete();
+    }
     this.UserService.presentLoadingDismiss();
   }
 
@@ -59,14 +62,35 @@ export class HomePage {
     this.ref.detectChanges();
   }
 
-  doRefresh(refresher) {
-    this.old_items = this.items;
-    this.getdata();
-
-    this._refresher = refresher;
-  }
   openSearch() {
     this.navCtrl.push('SearchPage');
+  }
+
+  openMmessage() {
+    this.checkLogin('MessagePage');
+  }
+
+  doRefresh(refresher) {
+    this.old_items = this.items;
+    this._refresher = refresher;
+    this.getdata();
+  }
+
+  doInfinite(infiniteScroll) {
+
+    this.getdata();
+    setTimeout(() => {
+      infiniteScroll.complete();
+    }, 1500);
+  }
+
+  //检查登录状态
+  checkLogin(page) {
+    //if (this.UserService._user._id) {
+      this.navCtrl.push(page);
+    //} else {
+     // this.navCtrl.push('LoginPage');
+    //}
   }
 
 }

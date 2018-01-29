@@ -19,6 +19,9 @@
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
       <work [data]='items'></work>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
   </div>
 
 </ion-content>
