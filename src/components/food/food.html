@@ -1,15 +1,14 @@
 <!-- Generated template for the FoodComponent component -->
 <section class="dv_content" [class.idark]="isIdark">
-    <h3>{{data.title}}</h3>
-    <p>{{data.text}}</p>
-    <h6>用料：</h6>
+    <h3>{{data.description}}</h3>
+    <p>{{data.description}}</p>
+    <section class="banner" (click)="pushArticlePage( workData.articleId );" [style.background]="'url(https://127.0.0.1:8443/cms/images/upload/article/'+data.contentImg+')'"></section>
+    <img [src]="'https://127.0.0.1:8443/cms/images/upload/article/'+data.contentImg" alt="">
+    <h6>内容：</h6>
 
-    <ion-row *ngFor="let item of data.food">
+    <ion-row>
         <ion-col>
-            <div>{{item.name}}</div>
-        </ion-col>
-        <ion-col>
-            <div>{{item.len}}</div>
+            <div>{{data.content}}</div>
         </ion-col>
     </ion-row>
 </section>

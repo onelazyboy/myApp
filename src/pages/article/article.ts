@@ -1,9 +1,8 @@
-import { Component,ViewChild,ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { IonicPage, NavController, NavParams,Content } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
-import { WORKS } from '../../app/mock-works'
-import { WorkData } from '../../app/workData';
+import { AppServices } from '../../app/services/appServices';
 
 /**
  * Generated class for the ArticlePage page.
@@ -21,9 +20,9 @@ export class ArticlePage {
   @ViewChild(Content) content: Content;
 
   item:any = {};
-  id:any = 0;
+  id: any = 0;
 
-   //头部导航标题
+  //头部导航标题
   title = '';
   //底部导航class运动控制属性
   tabanimate: boolean = false;
@@ -32,7 +31,8 @@ export class ArticlePage {
   old_scrollTop = 0;
   conts = 0;
   isIdark
-  constructor(public navCtrl: NavController, public navParams: NavParams,public UserService: UserServiceProvider,public ref: ChangeDetectorRef ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider,
+    public ref: ChangeDetectorRef, public appService: AppServices) {
     this.id = this.navParams.get("_id");
     this.getdata();
   }
@@ -44,10 +44,12 @@ export class ArticlePage {
   //获取文章数据
   getdata() {
     this.UserService.presentLoadingDefault();
-    console.log(this.id);
-    this.item = WORKS[this.id];
-    console.log(this.item.title);
-    this.UserService.presentLoadingDismiss();
+    this.appService.httpGet('tb=CmsArticle&ps=1&articleId=' + this.id).subscribe(res => {
+      this.item = res[0];
+      this.UserService.presentLoadingDismiss();
+    }, err => {
+      console.log(err);
+    });
   }
 
   //滚动监听
@@ -80,6 +82,4 @@ export class ArticlePage {
   tapEvent(e) {
     this.content.scrollToTop();
   }
-
-
 }

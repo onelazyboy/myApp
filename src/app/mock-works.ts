@@ -1,9 +1,0 @@
-import { WorkData } from './WorkData';
-
-export const WORKS: WorkData[] = [
-        { id: 0, type:1,name: '张三',think:'3',answerid:'http://p1.cdn.img9.top/ipfs/QmYEQRTRXnHK2kfW9VEkUyDG9QorfpHTAfhbS6iGK3mXwp?1.png',cont:'2',collect:'1',userimg:'http://p0.cdn.img9.top/ipfs/QmcbPA5eQNWzdx6BKKyZkE498ye1Wnt9Eog7hgvFvWfz4e?0.jpg',workbanner:'http://p2.cdn.img9.top/ipfs/QmSGPAexnk66mjx9CvmUuqk7Fd2ezDqTobzjeiceX1JeJu?2.png', title:'酸辣土豆丝',text:'制作工艺  1. 将土豆削皮， 切细丝，泡在水中洗去淀粉，既能避免其变黑，又能使其在炒烧时保持白嫩、爽脆。炒前捞出，沥干水分。',time:'2018-01-28' },
-        { id: 1, type:1,name: '李四',think:'3',answerid:'http://p1.cdn.img9.top/ipfs/QmYEQRTRXnHK2kfW9VEkUyDG9QorfpHTAfhbS6iGK3mXwp?1.png',cont:'2',collect:'1',userimg:'http://p0.cdn.img9.top/ipfs/QmcbPA5eQNWzdx6BKKyZkE498ye1Wnt9Eog7hgvFvWfz4e?0.jpg',workbanner:'http://p2.cdn.img9.top/ipfs/QmSGPAexnk66mjx9CvmUuqk7Fd2ezDqTobzjeiceX1JeJu?2.png',title:'西红柿炒鸡蛋',text:'西红柿炒鸡蛋 方法一 说明：西红柿炒鸡蛋人人会做，但是要做的好吃，难。主要是由几个误区，等会我会详细说',time:'2018-01-28' },
-        { id: 2, type:1,name: '王五',think:'3',answerid:'http://p1.cdn.img9.top/ipfs/QmYEQRTRXnHK2kfW9VEkUyDG9QorfpHTAfhbS6iGK3mXwp?1.png',cont:'2',collect:'1',userimg:'http://p0.cdn.img9.top/ipfs/QmcbPA5eQNWzdx6BKKyZkE498ye1Wnt9Eog7hgvFvWfz4e?0.jpg',workbanner:'http://p2.cdn.img9.top/ipfs/QmSGPAexnk66mjx9CvmUuqk7Fd2ezDqTobzjeiceX1JeJu?2.png',title:'地三鲜',text:'土豆 1 个 ,茄子 2 个 ,青椒 1 个  调料：烹调油、酱油、糖、盐、葱花、蒜蓉、生粉、高汤各适量',time:'2018-01-28' },
-        { id: 3, type:1,name: '赵六',think:'3',answerid:'http://p1.cdn.img9.top/ipfs/QmYEQRTRXnHK2kfW9VEkUyDG9QorfpHTAfhbS6iGK3mXwp?1.png',cont:'2',collect:'1',userimg:'http://p0.cdn.img9.top/ipfs/QmcbPA5eQNWzdx6BKKyZkE498ye1Wnt9Eog7hgvFvWfz4e?0.jpg',workbanner:'http://p2.cdn.img9.top/ipfs/QmSGPAexnk66mjx9CvmUuqk7Fd2ezDqTobzjeiceX1JeJu?2.png',title:'厨神贴士',text:'炒蛋时，锅一定要烧得很热，这样炒起来蛋会嫩滑点，锅不热炒蛋容易失败。 2、进过冰箱的鸡蛋，要先拿出来放一小时，再拿来烹调',time:'2018-01-28' }
-      ];
-

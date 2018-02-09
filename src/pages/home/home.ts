@@ -2,8 +2,7 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { Headers, Http } from '@angular/http';
-import { AppGlobal, AppService } from '../../app/app.service';
-import { WORKS } from '../../app/mock-works';
+import { AppServices } from '../../app/services/appServices';
 
 
 /**
@@ -25,23 +24,31 @@ export class HomePage {
   _refresher = null;
 
   isIdark;
-   //数据 
-   items = [];
-   old_items = [];
-  constructor(public http: Http,public UserService: UserServiceProvider,public navCtrl: NavController, public navParams: NavParams,public ref: ChangeDetectorRef, public appService: AppService) {
+  //数据 
+  items = [];
+  old_items = [];
+  temp: any;
+  constructor(public http: Http, public UserService: UserServiceProvider, public navCtrl: NavController,
+    public navParams: NavParams, public ref: ChangeDetectorRef, public appService: AppServices) {
     this.getdata();
   }
 
   //获取数据
   getdata() {
     this.UserService.presentLoadingDefault();
+    this.appService.httpGet('tb=CmsArticle&ps=5').subscribe(res => {
+      this.items = this.items.concat(res);
+      if (this._refresher) {
+        this._refresher.complete();
+      }
+      this.UserService.presentLoadingDismiss();
 
-    this.items = WORKS;
-    if (this._refresher) {
-      this._refresher.complete();
-    }
-    this.UserService.presentLoadingDismiss();
+    }, err => {
+      console.log(err);
+    });
+
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
@@ -87,9 +94,9 @@ export class HomePage {
   //检查登录状态
   checkLogin(page) {
     //if (this.UserService._user._id) {
-      this.navCtrl.push(page);
+    this.navCtrl.push(page);
     //} else {
-     // this.navCtrl.push('LoginPage');
+    // this.navCtrl.push('LoginPage');
     //}
   }
 
