@@ -17,25 +17,11 @@ import { AppServices } from '../../app/services/appServices';
 })
 export class OpenSharePage {
   title = "fenxiang";
-  data:any={};
+  data: any = {};
   _id;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public UserService: UserServiceProvider, public appService: AppServices ) {
-    this._id = this.navParams.get("articleId");
-    this.getdata();
-   
-  }
-
-  //获取文章数据
-  getdata() {
-    this.UserService.presentLoadingDefault();
-    this.appService.httpGet('tb=CmsArticle&ps=1&articleId=' + this._id).subscribe(res => {
-      this.data = res[0];
-      console.log("########@@@@@"+this.data);
-      this.UserService.presentLoadingDismiss();
-    }, err => {
-      console.log(err);
-    });
+    public UserService: UserServiceProvider, public appService: AppServices) {
+    this.data = this.navParams.get("article");
   }
 
   ionViewDidLoad() {

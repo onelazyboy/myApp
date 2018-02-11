@@ -25,8 +25,6 @@ export class WorkComponent {
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider) {
     this.isIdark = this.UserService.isIdark;
     this.irootNavCtrl = this.navCtrl;
-    
-    
     console.log('Hello WorkComponent Component');
     this.text = 'Hello World';
   }
@@ -48,9 +46,9 @@ export class WorkComponent {
   }
 
   //打开作品
-  pushArticlePage(_id) {
+  pushArticlePage(article) {
     this.irootNavCtrl.push('ArticlePage', {
-      _id: _id
+      article: article
     });
   }
 

@@ -2,25 +2,21 @@
 <section class="item" [class.idark]="isIdark" *ngFor="let workData of data">
   <header [class.idarkC3]="isIdark">
     <img [src]="'http://p0.cdn.img9.top/ipfs/QmcbPA5eQNWzdx6BKKyZkE498ye1Wnt9Eog7hgvFvWfz4e?0.jpg'" alt="">
-    <h4 *ngIf="workData.type == '0'">{{workData.name}} 回答了问题</h4>
-    <h4>{{workData.name}} 张三分享的作品</h4>
+    <h4>{{workData.article.name}} 张三分享的作品</h4>
     <p class="time">
-      <i class="fa fa-clock-o" aria-hidden="true"></i>:{{workData.time | date}}</p>
+      <i class="fa fa-clock-o" aria-hidden="true"></i>:{{workData.article.createTime | date}}</p>
   </header>
-  <section class="banner" (click)="pushArticlePage( workData.articleId );" [style.background]="'url(https://127.0.0.1:8443/cms/images/upload/article/'+workData.contentImg+')'"></section>
-  <h5 (click)="pushArticlePage( workData.articleId );">
-    <i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp;{{workData.description}}</h5>
-  <h5 [class.idarkC1]="isIdark" *ngIf="workData.type == '0'" (click)="pushQuestionPage( workData.articleId );" [hidden]="ishideTitle">
-    <i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp;{{workData.description}}</h5>
-  <h5 [class.idarkC1]="isIdark" *ngIf="workData.type == '1'" (click)="pushArticlePage( workData.articleId );">
-    <i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp;{{workData.description}}</h5>
-  <p [class.idarkC2]="isIdark" *ngIf="workData.type == '0'" (click)="pushAnswerPage( workData.articleId );">{{workData.content}}</p>
-  <p [class.idarkC2]="isIdark" *ngIf="workData.type == '1'" (click)="pushArticlePage( workData.articleId );">{{workData.content}}</p>
+  <section class="banner" (click)="pushArticlePage( workData.article);" [style.background]="'url(https://127.0.0.1:8443/cms/images/upload/article/'+workData.article.contentImg+')'"></section>
+  <h5 (click)="pushArticlePage( workData.article );">
+    <i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp;{{workData.article.description}}</h5>
+  
+  <p [class.idarkC2]="isIdark" (click)="pushArticlePage( workData.article );">{{workData.article.shortTitle}}</p>
+
   <section class="mark">
     <p>
-      <i class="fa fa-heart" aria-hidden="true"></i> 感谢:{{workData.think}} •
-      <i class="fa fa-file" aria-hidden="true"></i> 收藏:{{workData.collect}} •
-      <i class="fa fa-comment" aria-hidden="true"></i> 评论:{{workData.cont}}
+      <i class="fa fa-heart" aria-hidden="true"></i> 感谢:{{workData.likeCount}} •
+      <i class="fa fa-file" aria-hidden="true"></i> 收藏:{{workData.collectCount}} •
+      <i class="fa fa-comment" aria-hidden="true"></i> 评论:{{workData.leavewordCount}}
     </p>
   </section>
 </section>

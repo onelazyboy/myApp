@@ -20,8 +20,6 @@ export class ArticlePage {
   @ViewChild(Content) content: Content;
 
   item:any = {};
-  id: any = 0;
-
   //头部导航标题
   title = '';
   //底部导航class运动控制属性
@@ -33,23 +31,11 @@ export class ArticlePage {
   isIdark
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider,
     public ref: ChangeDetectorRef, public appService: AppServices) {
-    this.id = this.navParams.get("_id");
-    this.getdata();
+    this.item = this.navParams.get("article");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ArticlePage');
-  }
-
-  //获取文章数据
-  getdata() {
-    this.UserService.presentLoadingDefault();
-    this.appService.httpGet('tb=CmsArticle&ps=1&articleId=' + this.id).subscribe(res => {
-      this.item = res[0];
-      this.UserService.presentLoadingDismiss();
-    }, err => {
-      console.log(err);
-    });
   }
 
   //滚动监听
