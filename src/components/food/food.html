@@ -1,9 +1,9 @@
 <!-- Generated template for the FoodComponent component -->
-<section class="dv_content" [class.idark]="isIdark">
+<section class="dv_content">
     <h3>{{data.description}}</h3>
     <p>{{data.shortTitle}}</p>
-    <section class="banner" [style.background]="'url(https://127.0.0.1:8443/cms/images/upload/article/'+data.contentImg+')'"></section>
-    <img [src]="'https://127.0.0.1:8443/cms/images/upload/article/'+data.contentImg" alt="">
+    <section class="banner" [style.background]="'url('+httpUrlHome+'/cms/images/upload/article/'+data.contentImg+')'"></section>
+    <img [src]="httpUrlHome+'/cms/images/upload/article/'+data.contentImg" alt="">
     <h6>正文：</h6>
     <ion-row>
         <ion-col>

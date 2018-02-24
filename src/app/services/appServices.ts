@@ -6,21 +6,20 @@ import "rxjs/add/operator/map";
  export class AppServices{
      http:any;
      baseUrl:String;
-     url = "https://127.0.0.1:8443/cmsbackend/control/findTest?tb=CmsArticle&ps=3";
+     urlHome = "http://127.0.0.1:8080";
+     url = "";
 
      constructor (http:Http,public jsonp : Jsonp ){
          this.http = http; 
          this.baseUrl = 'https://www.reddit.com/r';
-         console.log('222');
+         this.url= this.urlHome+"/cmsbackend/control/findTest?tb=CmsArticle&ps=3";
      }
      getPosts(category,limit){
-         console.log('https://www.reddit.com/r/sports/top.json?limit='+limit);
         return this.http.get(this.baseUrl+'/'+category+'/top.json?limit='+limit)
         .map(res => res.json());
      }
 
      httpGet( params) {
-       console.log("#params#"+params);
         return this.http.get(this.url, {search: params}).map(result=>result.json());
       }
     
@@ -30,5 +29,8 @@ import "rxjs/add/operator/map";
     
       jsonpGet( params) {
         return this.jsonp.get(this.url, {search: params}).map(result=>result.json());
+      }
+      httpUrlHome(){
+        return this.urlHome;
       }
  }

@@ -15,6 +15,7 @@ export class FoodComponent {
 
   @Input() data:any = {};
   text: string;
+  httpUrlHome="http://127.0.0.1:8080";
 
   constructor() {
     console.log('Hello FoodComponent Component');
