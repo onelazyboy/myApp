@@ -2,7 +2,7 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { Http } from '@angular/http';
-import { AppServices } from '../../app/services/appServices';
+import { ServicesProvider } from '../../providers/services/services';
 
 
 /**
@@ -29,7 +29,7 @@ export class HomePage {
   old_items = [];
   temp: any;
   constructor(public http: Http, public UserService: UserServiceProvider, public navCtrl: NavController,
-    public navParams: NavParams, public ref: ChangeDetectorRef, public appService: AppServices) {
+    public navParams: NavParams, public ref: ChangeDetectorRef, public appService: ServicesProvider) {
     this.getdata();
   }
 

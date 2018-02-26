@@ -7,6 +7,7 @@ import { HttpModule,JsonpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { UserServiceProvider } from '../providers/user-service/user-service';
+import { ServicesProvider } from '../providers/services/services';
 
 @NgModule({ 
   declarations: [
@@ -25,7 +26,8 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserServiceProvider
+    UserServiceProvider,
+    ServicesProvider
   ]
 })
 export class AppModule {}

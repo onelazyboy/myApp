@@ -22,7 +22,7 @@ export class UserServiceProvider {
 
   presentLoadingDefault(){
     this.loading = this.loadingCtrl.create({
-        content: '吃乎正在加载中...'
+        content: '正在加载中...'
     });
     this.loading.present();
   }

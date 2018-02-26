@@ -1,7 +1,6 @@
 import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
-import { AppServices } from '../../app/services/appServices'; 
 
 /**
  * Generated class for the ArticlePage page.
@@ -29,7 +28,7 @@ export class ArticlePage {
   conts = 0;
   isIdark
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider,
-    public ref: ChangeDetectorRef, public appService: AppServices) {
+    public ref: ChangeDetectorRef) {
     this.item = this.navParams.get("article");
   }
 

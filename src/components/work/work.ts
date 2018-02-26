@@ -1,7 +1,7 @@
 import { Component,Input } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
-import { AppServices } from '../../app/services/appServices';
+import { ServicesProvider } from '../../providers/services/services';
 
 /**
  * Generated class for the WorkComponent component.
@@ -22,14 +22,13 @@ export class WorkComponent {
   text: string;
   irootNavCtrl: NavController;
   isIdark;
-  httpUrlHome="http://127.0.0.1:8080";
+  httpUrlHome="";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider,public appService : AppServices) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider,public appService : ServicesProvider) {
     this.isIdark = this.UserService.isIdark;
     this.irootNavCtrl = this.navCtrl;
-    console.log("####"+this.httpUrlHome); 
+    this.httpUrlHome = this.appService.httpUrlHome();
     console.log('Hello WorkComponent Component');
-    this.text = 'Hello World';
   }
 
   ngOnChanges(ch) {

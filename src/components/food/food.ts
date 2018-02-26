@@ -1,5 +1,6 @@
 
 import { Component,Input } from '@angular/core';
+import { ServicesProvider } from '../../providers/services/services';
 /**
  * Generated class for the FoodComponent component.
  *
@@ -14,12 +15,11 @@ export class FoodComponent {
 
   @Input() data:any = {};
   text: string;
-  httpUrlHome="http://127.0.0.1:8080";
+  httpUrlHome="";
 
-  constructor() {
-    console.log(this.data.content);
+  constructor(public appServices : ServicesProvider) {
+    this.httpUrlHome = this.appServices.httpUrlHome();
     console.log('Hello FoodComponent Component');
-    this.text = 'Hello World';
   }
 
 }

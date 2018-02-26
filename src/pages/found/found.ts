@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
-import { AppServices } from '../../app/services/appServices';
+import { ServicesProvider } from '../../providers/services/services';
 
 /**
  * Generated class for the FoundPage page.
@@ -23,7 +23,7 @@ export class FoundPage {
   isIdark:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider,
-    public appService: AppServices) {
+    public appService: ServicesProvider) {
     this.getdata();
   }
 

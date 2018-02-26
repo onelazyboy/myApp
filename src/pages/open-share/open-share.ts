@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
-import { AppServices } from '../../app/services/appServices';
 
 /**
  * Generated class for the OpenSharePage page.
@@ -21,7 +20,7 @@ export class OpenSharePage {
   type = 3;
   _id;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public UserService: UserServiceProvider, public appService: AppServices) {
+    public UserService: UserServiceProvider) {
     this.item = this.navParams.get("item");
   }
 
@@ -29,8 +28,8 @@ export class OpenSharePage {
     console.log('ionViewDidLoad OpenSharePage');
   }
 
-  beforeEnter(){
-    
+  beforeEnter() {
+
   }
 
 }
