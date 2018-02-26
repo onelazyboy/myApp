@@ -1,5 +1,5 @@
 import { Injectable,EventEmitter } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import {  Http } from '@angular/http';
 import { AlertController, LoadingController } from 'ionic-angular';
 
 /*

@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
  * See https://angular.io/api/core/Component for more info on Angular
  * Components.
  */
-declare var $: any;
 declare var Swiper: any;
 @Component({
   selector: 'swiper',

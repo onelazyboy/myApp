@@ -1,8 +1,7 @@
 import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { Headers, Http } from '@angular/http';
 import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
-import { AppServices } from '../../app/services/appServices';
+import { AppServices } from '../../app/services/appServices'; 
 
 /**
  * Generated class for the ArticlePage page.

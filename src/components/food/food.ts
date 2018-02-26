@@ -1,6 +1,5 @@
 
-import { Component,Input, OnChanges } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component,Input } from '@angular/core';
 /**
  * Generated class for the FoodComponent component.
  *

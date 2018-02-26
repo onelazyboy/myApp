@@ -1,5 +1,4 @@
 import { Component,Input } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the HeaderComponent component.

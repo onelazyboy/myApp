@@ -7,9 +7,6 @@ import { HttpModule,JsonpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { UserServiceProvider } from '../providers/user-service/user-service';
-import { RongCloudProvider } from '../providers/rong-cloud/rong-cloud';
-
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({ 
   declarations: [
@@ -28,8 +25,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserServiceProvider,
-    RongCloudProvider
+    UserServiceProvider
   ]
 })
 export class AppModule {}
