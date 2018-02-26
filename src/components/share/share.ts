@@ -20,9 +20,9 @@ export class ShareComponent {
     this.text = 'Hello World';
   }
 
-  pushOpenSharePage(article) {
+  pushOpenSharePage(item) {
     this.navCtrl.push('OpenSharePage', {
-      article: article
+      item: item
     });
   }
 

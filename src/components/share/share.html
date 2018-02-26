@@ -1,15 +1,18 @@
 <!-- Generated template for the ShareComponent component -->
-<section class="item" [class.idark]="isIdark" *ngFor="let item of data">
-  <header [data]="item.article"></header>
-  <section (click)="pushOpenSharePage( item.article );">
-      <p [class.idarkC2]="isIdark">{{item.description}}</p>
-      <section class="imgs-wrap">
-          <div  class="imgs" [style.background]="'url(https://127.0.0.1:8443/cms/images/upload/article/'+data.contentImg+')'"></div>
-      </section>
-      <section class="mark">
-          <p><i class="fa fa-eye" aria-hidden="true"></i> {{item.collectCount}}</p>
-          <p class="cen"><i class="fa fa-commenting-o" aria-hidden="true"></i> {{item.leavewordCount}}</p>
-          <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>{{item.likeCount}}</p>
-      </section>
-  </section>
+<section class="item" *ngFor="let item of data">
+    <header [data]="item.article"></header>
+    <section (click)="pushOpenSharePage( item);">
+        <p>{{item.description}}</p>
+        <section class="imgs-wrap">
+            <div *ngFor="let item2 of item.contentImgs" class="imgs" [style.background]="'url('+item2.src+')'"></div>
+        </section>
+        <section class="mark">
+            <p>
+                <i class="fa fa-eye" aria-hidden="true"></i> {{item.collectCount}}</p>
+            <p class="cen">
+                <i class="fa fa-commenting-o" aria-hidden="true"></i> {{item.leavewordCount}}</p>
+            <p>
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>{{item.likeCount}}</p>
+        </section>
+    </section>
 </section>

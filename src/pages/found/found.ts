@@ -20,6 +20,7 @@ export class FoundPage {
   //数据
   data: any = [];
   _refresher = null;
+  isIdark:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider,
     public appService: AppServices) {
@@ -54,4 +55,21 @@ export class FoundPage {
 
   }
 
+  pushQueList(){
+
+  }
+
+  pushHotWork(){
+
+  }
+  pushHotAnswer(){
+
+  }
+  pushHotShare(){
+    
+  }
+  //点击到顶部
+  tapEvent(e) {
+    this.content.scrollToTop();
+  }
 }

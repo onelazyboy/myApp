@@ -13,8 +13,8 @@
 </ion-header>
 
 
-<ion-content [class.idark]="isIdark">
-  <div [class.idark_content]="isIdark">
+<ion-content>
+  <div>
     <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
@@ -22,22 +22,22 @@
     <swiper></swiper>
     <section class="dv_box">
       <div class="dv_items" (click)="pushQueList();">
-          <i style="color: #9c27b0;" class="fa fa-question-circle" aria-hidden="true"></i>
-          <p>问题列表</p>
+        <i style="color: #9c27b0;" class="fa fa-question-circle" aria-hidden="true"></i>
+        <p>问题列表</p>
       </div>
       <div class="dv_items" (click)="pushHotWork();">
-          <i style="color: #ffeb3b;" class="fa fa-industry" aria-hidden="true"></i>
-          <p>热门作品</p>
+        <i style="color: #ffeb3b;" class="fa fa-industry" aria-hidden="true"></i>
+        <p>热门作品</p>
       </div>
       <div class="dv_items" (click)="pushHotAnswer();">
-          <i style="color: #03a9f4;" class="fa fa-bookmark" aria-hidden="true"></i>
-          <p>精品回答</p>
+        <i style="color: #03a9f4;" class="fa fa-bookmark" aria-hidden="true"></i>
+        <p>精品回答</p>
       </div>
       <div class="dv_items" (click)="pushHotShare();">
-          <i style="color: #8BC34A;" class="fa fa-shield" aria-hidden="true"></i>
-          <p>人气分享</p>
+        <i style="color: #8BC34A;" class="fa fa-shield" aria-hidden="true"></i>
+        <p>人气分享</p>
       </div>
-  </section>
-  <share [data]="data"></share>
+    </section>
+    <share [data]="data"></share>
   </div>
 </ion-content>

@@ -17,15 +17,20 @@ import { AppServices } from '../../app/services/appServices';
 })
 export class OpenSharePage {
   title = "fenxiang";
-  data: any = {};
+  item: any = {};
+  type = 3;
   _id;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public UserService: UserServiceProvider, public appService: AppServices) {
-    this.data = this.navParams.get("article");
+    this.item = this.navParams.get("item");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OpenSharePage');
+  }
+
+  beforeEnter(){
+    
   }
 
 }

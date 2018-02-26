@@ -17,7 +17,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{tabsHideOnSubPages:'true'}),
     HttpModule,JsonpModule
   ],
   bootstrap: [IonicApp],

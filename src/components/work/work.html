@@ -4,7 +4,7 @@
     <img [src]="'http://p0.cdn.img9.top/ipfs/QmcbPA5eQNWzdx6BKKyZkE498ye1Wnt9Eog7hgvFvWfz4e?0.jpg'" alt="">
     <h4>{{workData.article.name}} 张三分享的作品</h4>
     <p class="time">
-      <i class="fa fa-clock-o" aria-hidden="true"></i>:{{workData.article.createTime | date}}</p>
+      <i class="fa fa-clock-o" aria-hidden="true"></i>:{{workData.article.releaseDate | date:"yyyy/MM/dd"}}</p>
   </header>
   <section class="banner" (click)="pushArticlePage( workData.article);" [style.background]="'url('+httpUrlHome+'/cms/images/upload/article/'+workData.article.contentImg+')'"></section>
   <h5 (click)="pushArticlePage( workData.article );">

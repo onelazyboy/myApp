@@ -18,6 +18,7 @@ export class FoodComponent {
   httpUrlHome="http://127.0.0.1:8080";
 
   constructor() {
+    console.log(this.data.content);
     console.log('Hello FoodComponent Component');
     this.text = 'Hello World';
   }
