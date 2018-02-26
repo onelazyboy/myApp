@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header';
 import { CommentsComponent } from './comments/comments';
 import { FooterComponent } from './footer/footer';
 import { PhotoswipeComponent } from './photoswipe/photoswipe';
+import { IonicModule } from 'ionic-angular';
 @NgModule({
 	declarations: [WorkComponent,
     FoodComponent,
@@ -18,15 +19,15 @@ import { PhotoswipeComponent } from './photoswipe/photoswipe';
     CommentsComponent,
     FooterComponent,
     PhotoswipeComponent],
-	imports: [],
+	imports: [IonicModule],
 	exports: [WorkComponent,
     FoodComponent,
     SwiperComponent,
     ShareComponent,
-    ClassItemComponent,
     HeaderComponent,
     CommentsComponent,
     FooterComponent,
-    PhotoswipeComponent]
+    PhotoswipeComponent,
+    ClassItemComponent]
 })
 export class ComponentsModule {}

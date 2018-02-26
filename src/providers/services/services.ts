@@ -20,7 +20,7 @@ export class ServicesProvider {
     console.log('Hello ServicesProvider Provider');
     this.http = httpC;
     this.baseUrl = 'https://www.reddit.com/r';
-    this.url = this.urlHome + "/cmsbackend/control/findTest?tb=CmsArticle&ps=3";
+    this.url = this.urlHome + "/cmsbackend/control/findTest?";
   }
 
   getPosts(category, limit) {
@@ -40,6 +40,9 @@ export class ServicesProvider {
     return this.jsonp.get(this.url, { search: params }).map(result => result.json());
   }
   httpUrlHome() {
+    return this.urlHome;
+  }
+  httpImgUrlHome() {
     return this.urlHome;
   }
 

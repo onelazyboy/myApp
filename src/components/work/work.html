@@ -6,7 +6,7 @@
     <p class="time">
       <i class="fa fa-clock-o" aria-hidden="true"></i>:{{workData.article.releaseDate | date:"yyyy/MM/dd"}}</p>
   </header>
-  <section class="banner" (click)="pushArticlePage( workData.article);" [style.background]="'url('+httpUrlHome+'/cms/images/upload/article/'+workData.article.contentImg+')'"></section>
+  <section  *ngIf="workData.article.contentImg" class="banner" (click)="pushArticlePage( workData.article);" [style.background]="'url('+httpUrlHome+'/cms/images/upload/article/'+workData.article.contentImg+')'"></section>
   <h5 (click)="pushArticlePage( workData.article );">
     <i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp;{{workData.article.description}}</h5>
   

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { HomePage } from './home';
-import { WorkComponentModule } from '../../components/work/work.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
     HomePage,
   ],
   imports: [
-    WorkComponentModule,
+    ComponentsModule,
     IonicPageModule.forChild(HomePage),
   ],
   exports:[

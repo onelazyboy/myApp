@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ClassPage } from './class';
-import { ClassItemComponentModule } from '../../components/class-item/class-item.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
     ClassPage,
   ],
   imports: [
-    ClassItemComponentModule,
+    ComponentsModule,
     IonicPageModule.forChild(ClassPage),
   ],
   exports:[

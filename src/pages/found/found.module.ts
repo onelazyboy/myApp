@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { FoundPage } from './found';
-import { SwiperComponentModule } from '../../components/swiper/swiper.module';
-import { ShareComponentModule } from '../../components/share/share.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
     FoundPage,
   ],
   imports: [
-    SwiperComponentModule,
-    ShareComponentModule,
+    ComponentsModule,
     IonicPageModule.forChild(FoundPage),
   ],
   exports:[

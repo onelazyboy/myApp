@@ -28,6 +28,7 @@ export class HomePage {
   items = [];
   old_items = [];
   temp: any;
+  pageNumber = 0;
   constructor(public http: Http, public UserService: UserServiceProvider, public navCtrl: NavController,
     public navParams: NavParams, public ref: ChangeDetectorRef, public appService: ServicesProvider) {
     this.getdata();
@@ -36,19 +37,20 @@ export class HomePage {
   //获取数据
   getdata() {
     this.UserService.presentLoadingDefault();
-    this.appService.httpGet('tb=CmsArticle&ps=5').subscribe(res => {
-      this.items = this.items.concat(res);
-      if (this._refresher) {
-        this._refresher.complete();
+    this.pageNumber += 1;
+    this.appService.httpGet('tb=CmsArticle&ps=5&pn=' + this.pageNumber).subscribe(res => {
+      if (res != null) {
+        this.items = this.items.concat(res);
+        if (this._refresher) {
+          this._refresher.complete();
+        }
       }
       this.UserService.presentLoadingDismiss();
 
     }, err => {
       console.log(err);
     });
-
   }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');

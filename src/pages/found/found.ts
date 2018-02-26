@@ -21,6 +21,7 @@ export class FoundPage {
   data: any = [];
   _refresher = null;
   isIdark:any;
+  pageNumber = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider,
     public appService: ServicesProvider) {
@@ -34,7 +35,8 @@ export class FoundPage {
   //获取分享数据
   getdata() {
     this.UserService.presentLoadingDefault();
-    this.appService.httpGet('tb=CmsArticle&ps=5').subscribe(res => {
+    this.pageNumber += 1;
+    this.appService.httpGet('tb=CmsArticle&ps=5&pn='+this.pageNumber).subscribe(res => {
       this.data = this.data.concat(res);
       if (this._refresher) {
         this._refresher.complete();
