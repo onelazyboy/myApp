@@ -6,13 +6,21 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>openClass</ion-title>
+  <ion-navbar color="mblue">
+    <ion-title>{{catalogName}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding [class.idark_content]="isIdark">
+  <ion-list>
+    <ion-item *ngFor="let article of data" (click)="pushArticlePage( article );">
+      <ion-thumbnail item-start>
+        <img [src]="article.contentImg">
+        </ion-thumbnail>
+        <h2>{{article.description}}</h2>
+        <p>{{article.shortTitle==""?"......":article.shortTitle}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

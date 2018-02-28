@@ -32,7 +32,6 @@ export class WorkComponent {
   }
 
   ngOnChanges(ch) {
-
     try {
       if (ch['rootNavCtrl'].currentValue) {
         //console.log( ch['data'].currentValue.uid );

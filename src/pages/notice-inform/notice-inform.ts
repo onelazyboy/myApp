@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the NoticePage page.
+ * Generated class for the NoticeInformPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,19 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-notice',
-  templateUrl: 'notice.html',
+  selector: 'page-notice-inform',
+  templateUrl: 'notice-inform.html',
 })
-export class NoticePage {
-  page1: any = 'NoticeInformPage';
-  page2: any = 'NoticeThankPage';
-  page3: any = 'NoticeForkPage';
-  isIdark;
+export class NoticeInformPage {
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NoticePage');
+    console.log('ionViewDidLoad NoticeInformPage');
   }
 
 }

@@ -4,30 +4,30 @@ import { FoodComponent } from './food/food';
 import { SwiperComponent } from './swiper/swiper';
 import { ShareComponent } from './share/share';
 import { ClassItemComponent } from './class-item/class-item';
-import { HeaderComponent } from './header/header';
 import { CommentsComponent } from './comments/comments';
 import { FooterComponent } from './footer/footer';
 import { PhotoswipeComponent } from './photoswipe/photoswipe';
 import { IonicModule } from 'ionic-angular';
+import { ShareHeaderComponent } from './share-header/share-header';
 @NgModule({
 	declarations: [WorkComponent,
     FoodComponent,
     SwiperComponent,
     ShareComponent,
     ClassItemComponent,
-    HeaderComponent,
     CommentsComponent,
     FooterComponent,
-    PhotoswipeComponent],
+    PhotoswipeComponent,
+    ShareHeaderComponent],
 	imports: [IonicModule],
 	exports: [WorkComponent,
     FoodComponent,
     SwiperComponent,
     ShareComponent,
-    HeaderComponent,
     CommentsComponent,
     FooterComponent,
     PhotoswipeComponent,
-    ClassItemComponent]
+    ClassItemComponent,
+    ShareHeaderComponent]
 })
 export class ComponentsModule {}

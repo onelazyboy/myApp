@@ -1,22 +1,22 @@
 <!-- Generated template for the WorkComponent component -->
-<section class="item" [class.idark]="isIdark" *ngFor="let workData of data">
+<section class="item" [class.idark]="isIdark" *ngFor="let wk of data">
   <header [class.idarkC3]="isIdark">
-    <img [src]="'http://p0.cdn.img9.top/ipfs/QmcbPA5eQNWzdx6BKKyZkE498ye1Wnt9Eog7hgvFvWfz4e?0.jpg'" alt="">
-    <h4>{{workData.article.name}} 张三分享的作品</h4>
+    <img [src]="'http://www.qqxoo.com/uploads/allimg/180225/111GB351-7.jpg'" alt="">
+    <h4>{{wk.author}}分享的作品</h4>
     <p class="time">
-      <i class="fa fa-clock-o" aria-hidden="true"></i>:{{workData.article.releaseDate | date:"yyyy/MM/dd"}}</p>
+      <i class="fa fa-clock-o" aria-hidden="true"></i>:{{wk.releaseDate}}</p>
   </header>
-  <section  *ngIf="workData.article.contentImg" class="banner" (click)="pushArticlePage( workData.article);" [style.background]="'url('+httpUrlHome+'/cms/images/upload/article/'+workData.article.contentImg+')'"></section>
-  <h5 (click)="pushArticlePage( workData.article );">
-    <i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp;{{workData.article.description}}</h5>
+  <section  *ngIf="wk.contentImg" class="banner" (click)="pushArticlePage( wk);" [style.background]="'url('+httpUrlHome+'/cms/images/upload/article/'+wk.contentImg+')'"></section>
+  <h5 (click)="pushArticlePage( wk );">
+    <i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp;{{wk.description}}</h5>
   
-  <p [class.idarkC2]="isIdark" (click)="pushArticlePage( workData.article );">{{workData.article.shortTitle}}</p>
+  <p [class.idarkC2]="isIdark" (click)="pushArticlePage( wk );">{{wk.shortTitle}}</p>
 
   <section class="mark">
     <p>
-      <i class="fa fa-heart" aria-hidden="true"></i> 感谢:{{workData.likeCount}} •
-      <i class="fa fa-file" aria-hidden="true"></i> 收藏:{{workData.collectCount}} •
-      <i class="fa fa-comment" aria-hidden="true"></i> 评论:{{workData.leavewordCount}}
+      <i class="fa fa-heart" aria-hidden="true"></i> 感谢:{{wk.likeCount}} •
+      <i class="fa fa-file" aria-hidden="true"></i> 收藏:{{wk.collectCount}} •
+      <i class="fa fa-comment" aria-hidden="true"></i> 评论:{{wk.leavewordCount}}
     </p>
   </section>
 </section>

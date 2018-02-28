@@ -1,18 +1,18 @@
 <!-- Generated template for the ShareComponent component -->
-<section class="item" *ngFor="let item of data">
-    <header [data]="item.article"></header>
-    <section (click)="pushOpenSharePage( item);">
-        <p>{{item.description}}</p>
+<section class="item" *ngFor="let article of data">
+    <share-header [data]="article"></share-header>
+    <section (click)="pushOpenSharePage(article);">
+        <p>{{article.description}}</p>
         <section class="imgs-wrap">
-            <div *ngFor="let item2 of item.contentImgs" class="imgs" [style.background]="'url('+item2.src+')'"></div>
+            <div *ngFor="let cImgs of article.contentImgs" class="imgs" [style.background]="'url('+cImgs.src+')'"></div>
         </section>
         <section class="mark">
             <p>
-                <i class="fa fa-eye" aria-hidden="true"></i> {{item.collectCount}}</p>
+                <i class="fa fa-eye" aria-hidden="true"></i> {{article.collectCount}}</p>
             <p class="cen">
-                <i class="fa fa-commenting-o" aria-hidden="true"></i> {{item.leavewordCount}}</p>
+                <i class="fa fa-commenting-o" aria-hidden="true"></i> {{article.leavewordCount}}</p>
             <p>
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>{{item.likeCount}}</p>
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>{{article.likeCount}}</p>
         </section>
     </section>
 </section>

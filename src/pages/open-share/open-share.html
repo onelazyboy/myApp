@@ -7,25 +7,23 @@
 <ion-header no-border>
 
   <ion-navbar color="mblue">
-    <ion-title>{{item.article.description}}</ion-title>
+    <ion-title>{{article.description}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
-  <food [data]="item.article"></food>
+  <food [data]="article"></food>
   <section class="wrap">
     <ion-list>
       <ion-list-header>
-        {{item.leavewordCount}} 个评论
+        {{article.leavewordCount}} 个评论
       </ion-list-header>
     </ion-list>
-    <comments *ngFor="let leaveword of item.leaveword" [data]="leaveword" [type]="type"></comments>
+    <comments *ngFor="let leaveword of leavewordList" [data]="leaveword" ></comments>
   </section>
-
 </ion-content>
 
-
  <ion-footer>
-  <footer [data]="item.article"></footer>
+  <footer [data]="article"></footer>
 </ion-footer>

@@ -38,7 +38,7 @@ export class HomePage {
   getdata() {
     this.UserService.presentLoadingDefault();
     this.pageNumber += 1;
-    this.appService.httpGet('tb=CmsArticle&ps=5&pn=' + this.pageNumber).subscribe(res => {
+    this.appService.httpGet('article','tb=CmsArticle&ps=5&pn='+this.pageNumber).subscribe(res => {
       if (res != null) {
         this.items = this.items.concat(res);
         if (this._refresher) {

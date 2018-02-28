@@ -11,9 +11,7 @@
 
 </ion-header>
 
-
 <ion-content (ionScroll)="onScroll($event)" scrollY="false" [class.idark]="isIdark">
-
   <div class="ihome_wrap" [class.idark_content]="isIdark">
       <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
@@ -23,5 +21,4 @@
           <ion-infinite-scroll-content></ion-infinite-scroll-content>
       </ion-infinite-scroll>
   </div>
-
 </ion-content>

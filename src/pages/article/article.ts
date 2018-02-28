@@ -17,7 +17,7 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
 export class ArticlePage {
   @ViewChild(Content) content: Content;
 
-  item:any = {};
+  article:any = {};
   //头部导航标题
   title = '';
   //底部导航class运动控制属性
@@ -26,10 +26,10 @@ export class ArticlePage {
   tabbule: boolean = false;
   old_scrollTop = 0;
   conts = 0;
-  isIdark
+  isIdark:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserService: UserServiceProvider,
     public ref: ChangeDetectorRef) {
-    this.item = this.navParams.get("article");
+    this.article = this.navParams.get("article");
   }
 
   ionViewDidLoad() {
@@ -51,7 +51,7 @@ export class ArticlePage {
       this.tabanimate = false;
       if (!this.tabbule && scrollTop > 150) {
         this.tabbule = true;
-        this.title = this.item['title'];
+        this.title = this.article['title'];
       }
       if (scrollTop <= 150) {
         this.tabbule = false;

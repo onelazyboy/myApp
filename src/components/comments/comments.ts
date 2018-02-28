@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ServicesProvider } from '../../providers/services/services';
 
 /**
  * Generated class for the CommentsComponent component.
@@ -13,13 +14,8 @@ import { NavController } from 'ionic-angular';
 })
 export class CommentsComponent {
   @Input() data:any;
-  @Input() type:any;
-  text: string;
-
-  constructor(public navCtrl : NavController) {
+  constructor(public navCtrl : NavController,public appService : ServicesProvider) {
     console.log('Hello CommentsComponent Component');
-    console.log(this.data);
-    this.text = 'Hello World';
   }
 
   pushPersonPage(){

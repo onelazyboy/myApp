@@ -1,13 +1,12 @@
 <!-- Generated template for the CommentsComponent component -->
-<section class="item">
-  <header>
-      <img (click)="pushPersonPage( data.leavewordId );" [src]="'https://www.baidu.com/img/bd_logo1.png'" alt="">
-      <div class="it-left">
-          <h6>{{data.memberId}}XX</h6>
-          <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>:{{data.createTime | date:"MM/dd"}}</p>
-      </div>
-      <div class="fork" (click)="openComments( data._id );"><i class="fa fa-plus" aria-hidden="true"></i> 回复&nbsp;&nbsp;{{data.contentMember.length=='0'?'':data.contentMember.length}}</div>
-  </header>
-  <p>{{data.contentMember}}</p>
-
+<section class="item" [class.idark]="isIdark">
+    <header>
+        <img (click)="pushPersonPage( data.leavewordId );" [src]="'http://www.qqxoo.com/uploads/allimg/180227/15462KE3-4.jpg'" alt="">
+        <div class="it-left">
+            <h6>{{data.memberName}}</h6>
+            <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>:{{data.createTime | date }}</p>
+        </div>
+        <div class="fork" (click)="openComments( data.leavewordId );"><i class="fa fa-plus" aria-hidden="true"></i> 回复&nbsp;&nbsp;3</div>
+    </header>
+    <p>{{data.contentMember}}</p>
 </section>

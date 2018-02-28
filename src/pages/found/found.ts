@@ -36,25 +36,21 @@ export class FoundPage {
   getdata() {
     this.UserService.presentLoadingDefault();
     this.pageNumber += 1;
-    this.appService.httpGet('tb=CmsArticle&ps=5&pn='+this.pageNumber).subscribe(res => {
+    this.appService.httpGet('article','tb=CmsArticle&ps=5&pn='+this.pageNumber).subscribe(res => {
       this.data = this.data.concat(res);
       if (this._refresher) {
         this._refresher.complete();
       }
       this.UserService.presentLoadingDismiss();
-
     }, err => {
       console.log(err);
     });
   }
 
   doRefresh(refresher) {
-
     this.data = [];
     this.getdata();
-
     this._refresher = refresher;
-
   }
 
   pushQueList(){
