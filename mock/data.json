@@ -16,8 +16,8 @@
       "articleId": "10290",
       "memberName": "张三",
       "memberId": "10000001",
-      "adminName": "",
-      "adminId": "",
+      "adminName": "admin",
+      "adminId": "00000000000000000000",
       "leavewordType": "1"
     }
   ],

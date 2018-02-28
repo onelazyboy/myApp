@@ -13,6 +13,48 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content [class.idark]="isIdark">
+  <section class="dv_data" (click)="PersonalPage();" [class.idark_content]="isIdark">
+      <img [src]="mimg" />
+      <section class="dv_name_wrap">
+          <h5>{{name}}</h5>
+          <p>查看或编辑个人主页</p>
+      </section>
+  </section>
 
+  <ion-list no-border>
+
+      <ion-item (click)="pushFocusPage();">
+          <ion-icon name='eye' item-left color="h"></ion-icon>
+          我的关注
+      </ion-item>
+      <ion-item (click)="pushCollectPage();">
+          <ion-icon name='star' item-left color="h"></ion-icon>
+          我的收藏
+      </ion-item>
+      <ion-item (click)="pushMySharePage();">
+          <ion-icon name='document' item-left color="h"></ion-icon>
+          我的分享
+      </ion-item>
+      <ion-item (click)="pushMyQuestionPage();">
+          <ion-icon name='time' item-left color="h"></ion-icon>
+          我的提问
+      </ion-item>
+      <ion-item (click)="pushMyWorkPage();">
+          <ion-icon name='bookmarks' item-left color="h"></ion-icon>
+          我的作品
+      </ion-item>
+      <ion-item (click)="pushMyAnswerPage();">
+          <ion-icon name='play' item-left color="h"></ion-icon>
+          我的回答
+      </ion-item>
+      <!-- <ion-item (click)="pushMyCirclePage();">
+          <ion-icon name='play' item-left color="h"></ion-icon>
+          朋友圈
+      </ion-item> -->
+      <ion-item (click)="pushSettingPage();">
+          <ion-icon name='school' item-left color="h"></ion-icon>
+          设置
+      </ion-item>
+  </ion-list>
 </ion-content>
