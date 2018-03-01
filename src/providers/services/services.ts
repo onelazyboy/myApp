@@ -1,5 +1,5 @@
 import { Http, Jsonp } from '@angular/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import "rxjs/add/operator/map";
 
 /*
@@ -10,6 +10,9 @@ import "rxjs/add/operator/map";
 */
 @Injectable()
 export class ServicesProvider {
+
+  rong_data: EventEmitter<number>;
+
 
   http: any;
   baseUrl: String;

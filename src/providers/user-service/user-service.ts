@@ -1,6 +1,7 @@
-import { Injectable,EventEmitter } from '@angular/core';
-import {  Http } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 import { AlertController, LoadingController } from 'ionic-angular';
+import { ServicesProvider } from '../services/services';
 
 /*
   Generated class for the UserServiceProvider provider.
@@ -10,19 +11,52 @@ import { AlertController, LoadingController } from 'ionic-angular';
 */
 @Injectable()
 export class UserServiceProvider {
-  
-  loading;
-   //夜间模式
-   isIdark: any = false;
-   SetIdark: EventEmitter<number>;
-
-  constructor(public http: Http,public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
-    console.log('Hello UserServiceProvider Provider');
+  _init: any = {
+    nickname: "管理员",
+    userimg: "https://img3.duitang.com/uploads/item/201408/25/20140825012338_FwtET.jpeg",
+    userId: "00000000000000000000",
+    isIdark: false
   }
 
-  presentLoadingDefault(){
+  //关注的人
+  my_fork_user: any = [];
+
+  user: any;
+
+  loading;
+  //夜间模式
+  isIdark: any = false;
+
+  constructor(public http: Http, public alertCtrl: AlertController, public loadingCtrl: LoadingController,
+    private appService: ServicesProvider) {
+    this.user = this._init;
+  }
+
+  //获取数据
+  get_fork_user() {
+    this.appService.httpGet('fork', 'userId=' + this.user.userId).subscribe(res => {
+      if (res != null) {
+        this.my_fork_user = res.json();
+
+      }
+      this.presentLoadingDismiss();
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  checkisfork(uid) {
+    for (var i = 0; i < this.my_fork_user.length; i++) {
+      if (this.my_fork_user[i]['userId'] == uid) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  presentLoadingDefault() {
     this.loading = this.loadingCtrl.create({
-        content: '正在加载中...'
+      content: '正在加载中...'
     });
     this.loading.present();
   }
@@ -31,9 +65,6 @@ export class UserServiceProvider {
     this.loading.dismiss();
   }
 
-   //获取数据
-   get_fork_user() {
-    
-   }
+
 
 }

@@ -6,7 +6,7 @@
     <p class="time">
       <i class="fa fa-clock-o" aria-hidden="true"></i>:{{wk.releaseDate}}</p>
   </header>
-  <section  *ngIf="wk.contentImg" class="banner" (click)="pushArticlePage( wk);" [style.background]="'url('+httpUrlHome+'/cms/images/upload/article/'+wk.contentImg+')'"></section>
+  <section  *ngIf="wk.contentImg" class="banner" (click)="pushArticlePage( wk);" [style.background]="'url('+wk.contentImg+')'"></section>
   <h5 (click)="pushArticlePage( wk );">
     <i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp;{{wk.description}}</h5>
   
