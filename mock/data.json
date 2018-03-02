@@ -1,7 +1,32 @@
 {
+  "question":[
+	{
+	 "questionId":"20000000000000000001",
+	 "title":"天气咨询",
+	 "text":"今天天津天气好吗？",
+	 "description":"miaoshu",
+	 "releaseDate":"2018-03-02",
+	 "userId":"00000000000000000000"
+	}
+  ],
   "fork": [
     {
-      "userId": "00000000000000000000"
+      "uid": "00000000000000000000",
+      "userId": "00000000000000000000",
+      "uuserimg":"https://tvax4.sinaimg.cn/crop.0.0.640.640.180/006Mdc9xly8fosd9gk4jdj30hs0hsmxh.jpg",
+      "uname":"管理员A"
+    },
+    {
+      "uid": "10000000000000000001",
+      "userId": "00000000000000000000",
+      "uuserimg":"https://tvax2.sinaimg.cn/crop.0.0.480.480.180/005IsF2fly8fhqokcnsayj30dc0he75m.jpg",
+      "uname":"张三"
+    },
+    {
+      "uid": "10000000000000000002",
+      "userId": "00000000000000000000",
+      "uuserimg":"https://tvax3.sinaimg.cn/crop.0.0.1006.1006.180/6484b059ly8fm1n73xklvj20ry0ryabo.jpg",
+      "uname":"李四"
     }
   ],
   "users": [
@@ -124,7 +149,8 @@
       "shareCount": "0",
       "collectCount": "0",
       "leavewordCount": "1",
-      "likeCount": "0"
+      "likeCount": "0",
+      "authorId": "00000000000000000000"
     },
     {
       "titleImg": "name",
@@ -159,7 +185,8 @@
       "shareCount": "0",
       "collectCount": "0",
       "leavewordCount": "0",
-      "likeCount": "0"
+      "likeCount": "0",
+      "authorId": "00000000000000000000"
     },
     {
       "titleImg": "name",
@@ -194,7 +221,8 @@
       "shareCount": "0",
       "collectCount": "0",
       "leavewordCount": "0",
-      "likeCount": "0"
+      "likeCount": "0",
+      "authorId": "00000000000000000000"
     },
     {
       "titleImg": "name",
@@ -228,7 +256,8 @@
       "shareCount": "0",
       "collectCount": "0",
       "leavewordCount": "0",
-      "likeCount": "0"
+      "likeCount": "0",
+      "authorId": "00000000000000000000"
     },
     {
       "titleImg": "name",

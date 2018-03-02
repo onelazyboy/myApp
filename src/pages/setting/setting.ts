@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 
 /**
  * Generated class for the SettingPage page.
@@ -14,7 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'setting.html',
 })
 export class SettingPage {
-
+  Version = '';
+  ishide: boolean = true;
+  apkDownloadUrl = '';
+  isIdark;
+  fileTransfer: FileTransferObject;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

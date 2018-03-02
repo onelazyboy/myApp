@@ -45,8 +45,6 @@ export class PersonalPage {
       this.name = this.UserService.user.nickname;
       this.userimg = this.UserService.user.userimg;
     }
-    console.log("#############"+this.userimg)
-   
   }
 
   ionViewDidLoad() {
@@ -57,8 +55,8 @@ export class PersonalPage {
   getdata() {
     this.appService.httpGet('users','userId'+this.userId).subscribe(res => {
       if (res != null) {
-        this.name = res.json()[0].name;
-        this.userimg = res.json()[0].userimg;
+        this.name = res[0].name;
+        this.userimg = res[0].userimg;
       }
     }, err => {
       console.log(err);
