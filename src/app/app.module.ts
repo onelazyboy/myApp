@@ -8,6 +8,7 @@ import { HttpModule,JsonpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { ServicesProvider } from '../providers/services/services';
+import { IonicStorageModule  } from '@ionic/storage';
 
 @NgModule({ 
   declarations: [
@@ -15,6 +16,7 @@ import { ServicesProvider } from '../providers/services/services';
   ],
   imports: [
     BrowserModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp,{tabsHideOnSubPages:'true'}),
     HttpModule,JsonpModule
   ],

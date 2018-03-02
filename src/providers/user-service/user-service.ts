@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { AlertController, LoadingController } from 'ionic-angular';
 import { ServicesProvider } from '../services/services';
+import { Storage } from '@ionic/storage';
 
 /*
   Generated class for the UserServiceProvider provider.
@@ -27,7 +28,9 @@ export class UserServiceProvider {
   //夜间模式
   isIdark: any = false;
 
-  constructor(public http: Http, public alertCtrl: AlertController, public loadingCtrl: LoadingController,
+  Version = '0.0.1';
+
+  constructor(public http: Http, public alertCtrl: AlertController,public storage: Storage, public loadingCtrl: LoadingController,
     private appService: ServicesProvider) {
     this.user = this._init;
   }
@@ -65,6 +68,20 @@ export class UserServiceProvider {
     this.loading.dismiss();
   }
 
+  //开启/关闭夜视功能
+  setIdari(){
+    this.isIdark = !this.isIdark;
+    this.setDark(this.isIdark);
+  }
+
+  setDark(isdark){
+    this.storage.set('isdark', isdark);
+  }
+
+  clearStorage(){
+    this.storage.clear();
+    this.user = this._init;
+  }
 
 
 }

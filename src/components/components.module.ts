@@ -9,6 +9,9 @@ import { FooterComponent } from './footer/footer';
 import { PhotoswipeComponent } from './photoswipe/photoswipe';
 import { IonicModule } from 'ionic-angular';
 import { ShareHeaderComponent } from './share-header/share-header';
+import { QuestionComponent } from './question/question';
+import { QuestionHeaderComponent } from './question-header/question-header';
+import { QuestionFooterComponent } from './question-footer/question-footer';
 @NgModule({
 	declarations: [WorkComponent,
     FoodComponent,
@@ -18,7 +21,10 @@ import { ShareHeaderComponent } from './share-header/share-header';
     CommentsComponent,
     FooterComponent,
     PhotoswipeComponent,
-    ShareHeaderComponent],
+    ShareHeaderComponent,
+    QuestionComponent,
+    QuestionHeaderComponent,
+    QuestionFooterComponent],
 	imports: [IonicModule],
 	exports: [WorkComponent,
     FoodComponent,
@@ -28,6 +34,9 @@ import { ShareHeaderComponent } from './share-header/share-header';
     FooterComponent,
     PhotoswipeComponent,
     ClassItemComponent,
-    ShareHeaderComponent]
+    ShareHeaderComponent,
+    QuestionComponent,
+    QuestionHeaderComponent,
+    QuestionFooterComponent]
 })
 export class ComponentsModule {}
