@@ -24,18 +24,18 @@ export class SettingPage {
   apkDownloadUrl = '';
   isIdark;
   fileTransfer: FileTransferObject;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private userService : UserServiceProvider,
-    private appService:ServicesProvider,public alertCtrl : AlertController,public transfer : FileTransfer,public fileOpener: FileOpener,public file: File) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private userService: UserServiceProvider,
+    private appService: ServicesProvider, public alertCtrl: AlertController, public transfer: FileTransfer, public fileOpener: FileOpener, public file: File) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingPage');
   }
 
-  getAppVersion(){
+  getAppVersion() {
     this.userService.presentLoadingDefault();
-    
-    this.appService.httpGet("appversion","").subscribe(res=>{
+
+    this.appService.httpGet("appversion", "").subscribe(res => {
       if (res.json()[0]["v"] != this.userService.Version) {
         //可升级
         this.apkDownloadUrl = res.json()[0]["url"];
@@ -48,13 +48,13 @@ export class SettingPage {
     })
   }
 
-  notify(){
+  notify() {
     this.userService.setIdari();
     this.isIdark = this.userService.isIdark;
   }
 
-  out(){
-    
+  out() {
+
     this.userService.clearStorage();
     this.navCtrl.pop();
 

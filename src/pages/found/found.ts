@@ -54,16 +54,18 @@ export class FoundPage {
   }
 
   pushQueList(){
-
+    this.navCtrl.push('QuestionListPage')
   }
 
   pushHotWork(){
-
+    this.navCtrl.push('HotWorkPage');
   }
   pushHotAnswer(){
+    this.navCtrl.push('HotAnswerPage');
 
   }
   pushHotShare(){
+    this.navCtrl.push('HotSharePage');
     
   }
   //点击到顶部

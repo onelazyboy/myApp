@@ -1,6 +1,6 @@
-page-my-answer {
+page-question-list {
     ion-content {
-        background: #eee !important;
+        background-color: #f2f4f7 !important;
     }
     .idark {
         .toolbar-background {
@@ -8,6 +8,8 @@ page-my-answer {
         }
     }
     .idark_content {
-        background: #212b30 !important;
+        .toolbar-background {
+            background: #212b30 !important;
+        }
     }
 }
