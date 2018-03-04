@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
+import { UserServiceProvider } from '../../providers/user-service/user-service';
+import { ServicesProvider } from '../../providers/services/services';
 
 /**
  * Generated class for the HotWorkPage page.
@@ -14,12 +16,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'hot-work.html',
 })
 export class HotWorkPage {
+  @ViewChild(Content) content: Content;
+  data: any = [];
+  isIdark;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private userService:UserServiceProvider,private appService:ServicesProvider) {
+    this.getdata();
+    this.isIdark = this.userService.isIdark;
+  }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  getdata(){
+    this.userService.presentLoadingDefault();
+    this.appService.httpGet("article","").subscribe(
+      (res)=>{
+        if(res != null){
+          this.data = this.data.concat(res);
+        }
+        this.userService.presentLoadingDismiss();
+      }
+    )
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HotWorkPage');
+  }
+
+  tapEvent(){
+    this.content.scrollToTop();
+  }
+
+  doInfinite(infiniteScroll){
+    this.getdata();
+    setTimeout(() => {
+        infiniteScroll.complete();
+      },1500
+    );
   }
 
 }
