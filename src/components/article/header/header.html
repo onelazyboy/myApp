@@ -1,0 +1,11 @@
+<!-- Generated template for the HeaderComponent component -->
+<section class="dv_banner" [style.background]="'url('+data.contentImg+')'"></section>
+<section class="user" [class.idark]="isIdark">
+    <img (click)="pushPersonPage( data.authorId );" [src]="data.authorImg" />
+    <section (click)="pushPersonPage( data.authorId );" class="data">
+        <h4>{{data.author}}</h4>
+        <p>创建于：{{data.releaseDate}}</p>
+    </section>
+    <section [hidden]="isfork" class="fork" (click)="forkClickEvent();">＋ 关注</section>
+    <section [hidden]="!isfork" class="fork nofork" (click)="unfork();">取消关注</section>
+</section>

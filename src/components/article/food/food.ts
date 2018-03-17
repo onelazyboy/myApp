@@ -1,6 +1,6 @@
 
 import { Component,Input } from '@angular/core';
-import { ServicesProvider } from '../../providers/services/services';
+import { ServicesProvider } from '../../../providers/services/services';
 /**
  * Generated class for the FoodComponent component.
  *

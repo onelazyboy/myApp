@@ -1,22 +1,25 @@
 <!-- Generated template for the WorkComponent component -->
 <section class="item" [class.idark]="isIdark" *ngFor="let wk of data">
   <header [class.idarkC3]="isIdark">
-    <img [src]="'http://www.qqxoo.com/uploads/allimg/180225/111GB351-7.jpg'" alt="">
+    <img [src]="wk.authorImg" alt="wk.title">
     <h4>{{wk.author}}分享的作品</h4>
     <p class="time">
       <i class="fa fa-clock-o" aria-hidden="true"></i>:{{wk.releaseDate}}</p>
   </header>
-  <section  *ngIf="wk.contentImg" class="banner" (click)="pushArticlePage( wk);" [style.background]="'url('+wk.contentImg+')'"></section>
+  <section *ngIf="wk.contentImg" class="banner" (click)="pushArticlePage( wk);" [style.background]="'url('+wk.contentImg+')'"></section>
   <h5 (click)="pushArticlePage( wk );">
-    <i class="fa fa-cutlery" aria-hidden="true"></i> &nbsp;{{wk.description}}</h5>
-  
-  <p [class.idarkC2]="isIdark" (click)="pushArticlePage( wk );">{{wk.shortTitle}}</p>
-
+    <i class="fa fa-th-list" aria-hidden="true"></i> &nbsp;{{wk.title}}
+  </h5>
+  <p [class.idarkC2]="isIdark" (click)="pushArticlePage( wk );">{{wk.description}}</p>
   <section class="mark">
     <p>
-      <i class="fa fa-heart" aria-hidden="true"></i> 感谢:{{wk.likeCount}} •
-      <i class="fa fa-file" aria-hidden="true"></i> 收藏:{{wk.collectCount}} •
-      <i class="fa fa-comment" aria-hidden="true"></i> 评论:{{wk.leavewordCount}}
+      <i aria-hidden="true"></i>{{wk.catalogName}}
+    </p>
+    <p class="cen">
+      <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>  {{wk.likeCount}}
+    </p>
+    <p>
+      <i class="fa fa-commenting-o" aria-hidden="true"></i>  {{wk.leavewordCount}}
     </p>
   </section>
 </section>

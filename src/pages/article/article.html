@@ -6,13 +6,17 @@
 -->
 <ion-header no-border [class.animate]="tabanimate" [class.idark]="isIdark" (tap)="tapEvent($event)">
 
-    <ion-navbar color="mblue">
-        <ion-title>{{article.description}}</ion-title>
-    </ion-navbar>
-  
-  </ion-header>
+  <ion-navbar color="tran" [class.bule]="tabbule">
+    <ion-title>{{article.title}}</ion-title>
+  </ion-navbar>
 
+</ion-header>
 
 <ion-content padding (ionScroll)="onScroll($event)" [class.idark]="isIdark">
-        <food [data]="article"></food>
+  <header [data]="article"></header>
+  <food [data]="article"></food>
 </ion-content>
+
+<ion-footer>
+    <footer [data]="article"></footer>
+  </ion-footer>
