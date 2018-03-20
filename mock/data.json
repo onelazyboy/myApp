@@ -9,15 +9,7 @@
       "userId": "00000000000000000000"
     }
   ],
-  "fork": [
-    {
-      "id": "6",
-      "uid": "10000000000000000001",
-      "userId": "00000000000000000000",
-      "uuserimg": "https://tvax1.sinaimg.cn/crop.0.0.750.750.180/006WdOhGly8fo3k19ngn9j30ku0ku3z5.jpg",
-      "uname": "张儿"
-    }
-  ],
+  "fork": [],
   "users": [
     {
       "nickname": "管管",
@@ -73,7 +65,16 @@
   ],
   "share": [],
   "collect": [],
-  "like": [],
+  "like": [
+    {
+      "id": "2",
+      "uid": "10000000000000000001",
+      "userId": "00000000000000000000",
+      "uuserimg": "https://tvax1.sinaimg.cn/crop.0.0.750.750.180/006WdOhGly8fo3k19ngn9j30ku0ku3z5.jpg",
+      "uname": "张儿",
+      "createTime": "2018-3-20"
+    }
+  ],
   "leaveword": [
     {
       "leavewordId": "10000000000000000000",

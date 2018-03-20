@@ -7,5 +7,5 @@
         <p>创建于：{{data.releaseDate}}</p>
     </section>
     <section [hidden]="isfork" class="fork" (click)="forkClickEvent();">＋ 关注</section>
-    <section [hidden]="!isfork" class="fork nofork" (click)="unfork();">取消关注</section>
+    <section [hidden]="!isfork" class="fork nofork" (click)="unforkClickEvent();">取消关注</section>
 </section>

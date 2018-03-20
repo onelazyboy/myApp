@@ -5,8 +5,12 @@
         <ion-icon name="text"></ion-icon>
         评论
     </div>
-    <div [hidden]="islike" class="dv_f" (click)="like();">
+    <div [hidden]="isLike" class="dv_f" (click)="likeEvent();">
         <ion-icon name="heart-outline"></ion-icon>
         点赞
+    </div>
+    <div [hidden]="!isLike" class="dv_f" (click)="unLikeEvent();">
+        <ion-icon name="heart"></ion-icon>
+        取消收藏
     </div>
 </ion-toolbar>

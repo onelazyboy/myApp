@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ServicesProvider } from '../../../providers/services/services';
+import { UserServiceProvider } from '../../../providers/user-service/user-service';
 
 /**
  * Generated class for the FooterComponent component.
@@ -12,22 +14,51 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'footer.html'
 })
 export class FooterComponent {
-  islike: boolean = false;
+  isLike: boolean = false;
   text: string;
+  like:any = [];
+  likeId = "";
+  likeDate = "";
+  date = new Date();
+
+  private error: String = '';
+
   @Input() data: any = {};
-  constructor(public navCtrl :NavController) {
-    console.log('Hello FooterComponent Component');
-    this.text = 'Hello World';
+  constructor(public navCtrl :NavController,private appService : ServicesProvider,private userService : UserServiceProvider) {
+    this.getLikeDate();
   }
 
   sendComment(){
     
   }
-  like(){
-
+  getLikeDate(){
+    this.appService.httpGet("like","userId="+this.userService.user.userId).subscribe(
+      res => {
+        if(res.length >0){
+          this.like = this.like.concat(res)[0];
+          this.isLike = true;
+          this.likeId = this.like.likeId;
+        }
+      }
+    )
   }
-  unlike(){
 
+  likeEvent(){
+    this.likeId = Math.ceil(Math.random() * 10) + "";
+    this.likeDate = this.date.getFullYear()+'-'+(this.date.getMonth()+1)+'-'+this.date.getDate();
+    this.like = { id: this.likeId, uid: this.data.authorId, userId: this.userService.user.userId, uuserimg: this.data.authorImg, uname: this.data.author,createTime:this.likeDate };
+    this.appService.httpPost("like",this.like).subscribe(
+      res => {
+        this.isLike = true;
+      },error => this.error = error
+    )
+  }
+  unLikeEvent(){
+    this.appService.httpDelete("like/"+this.likeId,"").subscribe(
+      res => {
+        this.isLike = false;
+      },error => this.error
+    )
   }
 
 }

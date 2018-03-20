@@ -19,9 +19,13 @@ export class HeaderComponent {
   //是否关注
   isfork: boolean = false;
   isIdark;
-  private error: String = '';
+  
   fork: any = [];
   forkId = "";
+  forkDate:any;
+  date = new Date();
+
+  private error: String = '';
 
   constructor(private navCtrl: NavController, private userService: UserServiceProvider, private appService: ServicesProvider) {
     this.getForkData();
@@ -41,8 +45,8 @@ export class HeaderComponent {
     this.appService.httpGet("fork", "userId=" + this.userService.user.userId).subscribe(
       res => {
         if (res.length > 0) {
-          this.fork = this.fork.concat(res);
-          this.forkId = this.fork[0].id;
+          this.fork = this.fork.concat(res)[0];
+          this.forkId = this.fork.id;
           this.isfork = true;
         }
       }
@@ -55,14 +59,16 @@ export class HeaderComponent {
       return true;
     }
     this.forkId = Math.ceil(Math.random() * 10) + "";
-    this.appService.httpPost("fork", { id: this.forkId, uid: this.data.authorId, userId: this.userService.user.userId, uuserimg: this.data.authorImg, uname: this.data.author }).subscribe(
+    this.forkDate = this.date.getFullYear()+'-'+(this.date.getMonth()+1)+'-'+this.date.getDate();
+    this.fork = { id: this.forkId, uid: this.data.authorId, userId: this.userService.user.userId, uuserimg: this.data.authorImg, uname: this.data.author,createTime:this.forkDate };
+    this.appService.httpPost("fork", this.fork).subscribe(
       res => {
         this.isfork = true;
       }, error => this.error = error
     )
   }
 
-  unfork() {
+  unforkClickEvent() {
     if (!this.isfork) {
       return true;
     }
