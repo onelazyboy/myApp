@@ -20,6 +20,7 @@ export class FooterComponent {
   likeId = "";
   likeDate = "";
   date = new Date();
+  uuid = "";
 
   private error: String = '';
 
@@ -28,11 +29,9 @@ export class FooterComponent {
     this.getLikeDate();
   }
 
-  sendComment(){
-    
-  }
   getLikeDate(){
-    this.appService.httpGet("like","userId="+this.userService.user.userId).subscribe(
+    this.uuid = this.userService.user.userId;
+    this.appService.httpGet("like","userId="+this.uuid).subscribe(
       res => {
         if(res.length >0){
           this.like = this.like.concat(res)[0];
@@ -46,10 +45,11 @@ export class FooterComponent {
   likeEvent(){
     this.likeId = Math.ceil(Math.random() * 10) + "";
     this.likeDate = this.date.getFullYear()+'-'+(this.date.getMonth()+1)+'-'+this.date.getDate();
-    this.like = { id: this.likeId, uid: this.data.authorId, userId: this.userService.user.userId, uuserimg: this.data.authorImg, uname: this.data.author,createTime:this.likeDate };
+    this.like = { id: this.likeId, uid: this.data.authorId, userId: this.uuid, uuserimg: this.data.authorImg, uname: this.data.author,createTime:this.likeDate };
     this.appService.httpPost("like",this.like).subscribe(
       res => {
         this.isLike = true;
+        this.likeId = this.likeId;
       },error => this.error = error
     )
   }
@@ -59,6 +59,13 @@ export class FooterComponent {
         this.isLike = false;
       },error => this.error
     )
+  }
+
+  sendComment(id,userId){
+    this.navCtrl.push("CommentListPage",{
+      id:id,
+      userId:userId
+    })
   }
 
 }

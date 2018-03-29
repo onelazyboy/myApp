@@ -64,6 +64,7 @@ export class HeaderComponent {
     this.appService.httpPost("fork", this.fork).subscribe(
       res => {
         this.isfork = true;
+        this.forkId = this.forkId;
       }, error => this.error = error
     )
   }
